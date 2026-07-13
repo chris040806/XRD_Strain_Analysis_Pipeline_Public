@@ -1,0 +1,21 @@
+[project]
+name = "xrd-strain-analysis-pipeline"
+version = "0.1.0"
+description = "Systematic pipeline for XRD strain analysis using existing nxprocess_lab and nxrefine_lab workflows."
+requires-python = ">=3.7"
+dependencies = [
+    "h5py",
+    "ImageD11",
+    "lmfit",
+    "matplotlib",
+    "nexusformat",
+    "numpy",
+    "pyFAI",
+    "pyyaml",
+    "scipy",
+    "six",
+    "tifffile",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,153 @@
+# Sanitized public demo configuration.
+# Copy this file to a private config and replace the demo values with local
+# scan names, calibration files, image ranges, and analysis settings.
+
+project:
+  name: XRD Strain Analysis Pipeline Demo
+  sample_name: DemoSample
+  output_root: Processed_Data
+  raw_data_root: Raw_Data
+  overlay_root: Max_of_All
+  calibration_root: Calibration
+  lab_module_path: .
+
+reference_scan_id: scan_000_reference
+
+unit_cell_initial:
+  source: placeholder literature/manual value
+  unit_cell_group: hexagonal
+  lattice_centring: P
+  a: 3.50
+  b: 3.50
+  c: 6.00
+  alpha: 90
+  beta: 90
+  gamma: 120
+
+unit_cell_refined:
+  source: placeholder refined value
+  unit_cell_group: hexagonal
+  lattice_centring: P
+  a: 3.50
+  b: 3.50
+  c: 6.00
+  alpha: 90
+  beta: 90
+  gamma: 120
+
+theta_scan:
+  imstart: 1
+  imend: 400
+  gapstart: [0]
+  gapend: [0]
+  theta_start: 0
+  theta_end: 20
+  theta_step: 0.05
+  phi_start: 0
+  phi_end: 20
+  phi_step: 0.05
+  frame_time: 180
+
+instrument:
+  calibrant: DemoCalibrant
+  calibration_date: "YYYYMMDD"
+  calibration_file_base: demo_calibration
+  chi: 90
+  omega: 0
+  det_bg: 0
+  imsize: 3450
+  chunk_size: 10
+  null_image: true
+  imstartdiff: 0
+  orientation_matrix:
+    - [1.0, 0.0, 0.0]
+    - [0.0, 1.0, 0.0]
+    - [0.0, 0.0, 1.0]
+
+q_vectors:
+  - label: q1
+    h: 0.5
+    k: 0.0
+    l: 0.5
+  - label: q2
+    h: 0.0
+    k: 0.5
+    l: 0.5
+  - label: q3
+    h: 0.5
+    k: 0.5
+    l: 0.5
+
+scans:
+  - scan_id: scan_000_reference
+    role: reference
+    strain: 0.0
+    file: demo_reference
+    sample_name: DemoSample
+    sample_label: reference
+    sample_temperature: 100
+    DATA_directory: demo_reference_scan
+    data_base_name: demo_reference_frame
+    manual_peaklist_file: Peak_Lists/scan_000_reference_peaks.txt
+
+  - scan_id: scan_001_strain000_CDW1
+    role: strain
+    sweep_direction: up
+    strain: 0.0
+    file: demo_cdw1_strain000
+    sample_name: DemoSample
+    sample_label: low_temperature
+    sample_temperature: 20
+    DATA_directory: demo_strain000/CDW1
+    data_base_name: demo_cdw1_frame
+    imstart: 180
+    imend: 220
+    phi_start: 9.0
+    phi_end: 11.0
+
+  - scan_id: scan_002_strain050_CDW1
+    role: strain
+    sweep_direction: up
+    strain: 50.0
+    file: demo_cdw1_strain050
+    sample_name: DemoSample
+    sample_label: low_temperature
+    sample_temperature: 20
+    DATA_directory: demo_strain050/CDW1
+    data_base_name: demo_cdw1_frame
+    imstart: 180
+    imend: 220
+    phi_start: 9.0
+    phi_end: 11.0
+
+  - scan_id: scan_003_strain100_CDW1
+    role: strain
+    sweep_direction: up
+    strain: 100.0
+    file: demo_cdw1_strain100
+    sample_name: DemoSample
+    sample_label: low_temperature
+    sample_temperature: 20
+    DATA_directory: demo_strain100/CDW1
+    data_base_name: demo_cdw1_frame
+    imstart: 180
+    imend: 220
+    phi_start: 9.0
+    phi_end: 11.0
+
+analysis:
+  bragg_projection_list:
+    - [1, 0, 0]
+    - [0, 1, 0]
+    - [1, 1, 0]
+
+  cdw_projection_parent_hkls:
+    - [1, 0, 0]
+    - [0, 1, 0]
+    - [1, 1, 0]
+
+  transform_preparation:
+    iterations: 1000
+    chunkx: 5
+    chunky: 5
+    chunkz: 1

@@ -1,0 +1,35 @@
+# Python/Jupyter transient files
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Local/editor state
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Local Conda environment snapshots are large and machine-specific.
+env/*
+!env/README.md
+
+# Experimental data and generated outputs.
+Raw_Data/*
+Processed_Data/*
+Calibration/*
+Max_of_All/*
+Peak_Lists/*
+
+# Keep folder documentation/placeholders.
+!Raw_Data/README.md
+!Processed_Data/README.md
+!Calibration/README.md
+!Max_of_All/README.md
+!Peak_Lists/README.md
+
+# NeXus/HDF5/image outputs generated during analysis.
+*.nxs
+*.hdf5
+*.h5
+*.tif
+*.tiff

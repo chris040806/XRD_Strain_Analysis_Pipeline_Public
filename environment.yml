@@ -1,0 +1,21 @@
+name: xrd-strain-analysis
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.7
+  - numpy
+  - scipy
+  - matplotlib
+  - h5py
+  - tifffile
+  - six
+  - pyyaml
+  - nexusformat
+  - pyfai
+  - imaged11
+  - lmfit
+  - notebook
+  - jupyterlab
+  - ipykernel
+  - pip
