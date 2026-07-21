@@ -4,7 +4,7 @@ Public, code-only demonstration of a notebook-driven X-ray diffraction strain an
 
 This repository is intentionally sanitized for public sharing. It contains the pipeline code, configuration structure, and documentation, but it does not include raw detector images, processed NeXus/HDF5 files, calibration images, peak lists, saved detector windows, or unpublished experimental results.
 
-AI tools were used only for documentation cleanup and debugging support. Scientific choices, validation, and interpretation require human inspection.
+AI tools were used only for documentation cleanup and debugging support. Scientific choices, validation, were carefully conducted with human inspections.
 
 ## What This Shows
 
